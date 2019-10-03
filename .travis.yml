@@ -14,4 +14,4 @@ deploy:
   provider: heroku
   api_key:
     secure: "0f5aad02-bf4f-404e-9822-fc6215605da1"
-    app: first-travis-app
+  app: first-travis-app
