@@ -3,7 +3,7 @@ node_js:
 - '10'
 
 before_install:
-- yarn install -g @angular/cli
+- yarn install @angular/cli
 install: yarn install
 
 branches:
