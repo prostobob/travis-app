@@ -1,0 +1,11 @@
+<mat-card class="card">
+  <a [routerLink]="['/show', card.id]">
+    <img mat-card-image [src]="card?.imgUrl" alt="Photo of a Shiba Inu" />
+  </a>
+  <mat-card-header>
+    <mat-card-title class="title">
+      <a>{{ card?.name }}</a>
+      <div>Рейтинг: {{ card?.rating }}</div>
+    </mat-card-title>
+  </mat-card-header>
+</mat-card>

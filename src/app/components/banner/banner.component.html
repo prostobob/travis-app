@@ -1,0 +1,68 @@
+<!-- <mat-card class="card">
+  <mat-grid-list cols="2" rowHeight="200">
+    <mat-grid-tile>
+      <div class="img_block">
+        <a>
+          <img class="img" [src]="banner?.image" alt="Photo of a Shiba Inu" />
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+        <div class="title">
+          <h4>Название сериала:</h4>
+          <div>{{ banner?.name }}</div>
+        </div>
+        <div class="premier">
+          <h5>Премьера:</h5>
+          <div>{{ banner?.premiered }}</div>
+        </div>
+        <div class="series">
+          <h5>Жанр:</h5>
+          <div>{{ banner?.type }}</div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card> -->
+<h2>{{title}}</h2>
+<mat-card class="card">
+  <div class="card_block">
+    <div class="img_container">
+      <div class="img_block">
+        <a [routerLink]="['/show', banner.id]" >
+          <img class="img" [src]="banner?.image" alt="Photo of a Shiba Inu" />
+        </a>
+      </div>
+    </div>
+    <div class="info_container">
+      <div class="title">
+        <h4>Название сериала:</h4>
+        <div>{{ banner?.name }}</div>
+      </div>
+      <div class="premier">
+        <h5>Премьера:</h5>
+        <div>{{ banner?.premiered }}</div>
+      </div>
+      <div class="series">
+        <h5>Жанр:</h5>
+        <div>{{ banner?.type }}</div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+
+
+  <!-- <div class="banner_last">
+    <div class="banner__image col">
+      <img
+        class="img"
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+    </div>
+    <div class="col">title</div>
+    <div class="col">something</div>
+  </div> -->
+

@@ -1,0 +1,14 @@
+<mat-toolbar>My App</mat-toolbar>
+<div class="container">
+  <div *ngIf="scheludedBanner$ | async as scheduledBanner">
+    <app-banner [title]="titles.COMING" [banner]="scheduledBanner"></app-banner>
+  </div>
+  <div *ngIf="popularBanner$ | async as popularBanner">
+    <app-banner [title]="titles.POPULAR" [banner]="popularBanner"></app-banner>
+  </div>
+  <app-card-list [title]="titles.LAST_VIEW" [cardList]="viewedCardList"></app-card-list>
+  <app-card-list
+    [title]="titles.POPULAR"
+    [cardList]="recomendedCardList$ | async"
+  ></app-card-list>
+</div>

@@ -1,0 +1,24 @@
+<div class="wrapper" *ngIf="show$ | async as show">
+  <h1>{{ show.name }}</h1>
+  <div class="content">
+    <div class="img">
+      <img [src]="show.imgUrl" alt="" />
+    </div>
+    <div class="desc" [innerHTML]="show.description"></div>
+    <div class="info">
+      <div>Network: {{show.networkName}}</div>
+      <div>Status: {{show.status}}</div>
+      <div>Show Type: {{show.showType}}</div>
+    </div>
+  </div>
+  <div class="seasons">
+    <h3>Список Сезонов</h3>
+    <mat-list role="list" *ngIf="(seasonsList$ | async) as list">
+      <mat-list-item role="listitem" *ngFor="let season of list">
+        <a [routerLink]="['/routePath']">
+           Cезон номер: {{season.number}}
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
