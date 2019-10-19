@@ -1,4 +1,3 @@
-<mat-toolbar>My App</mat-toolbar>
 <div class="container">
   <div *ngIf="scheludedBanner$ | async as scheduledBanner">
     <app-banner [title]="titles.COMING" [banner]="scheduledBanner"></app-banner>

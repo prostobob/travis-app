@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { SerializeService } from './serialize.service';
 import { Observable } from 'rxjs';
-import { IBanner } from '../models/banner.interface';
+import { IEpisodeQueryParams } from '../models/episode.interface';
 
 @Injectable()
 export class ApiService {
-  private apiUrl = 'http://api.tvmaze.com/';
-  private country = 'US';
+  private apiUrl: string;
+  private country: string;
   constructor(
     private http: HttpClient,
     private serializeService: SerializeService
-  ) {}
+  ) {
+    this.apiUrl = 'https://api.tvmaze.com/';
+    this.country = 'US';
+  }
 
   getScheduleEntity(timestamp: string): Observable<any> {
     return this.http
@@ -24,15 +27,22 @@ export class ApiService {
     return this.http.get(`${this.apiUrl}shows/${id}`);
   }
 
-  getEntitys() {
-    return this.http.get(`http://api.tvmaze.com/shows/`);
-  }
-
   getEntitysByQuery(query: string) {
     return this.http.get(`${this.apiUrl}search/shows?q=${query}`);
   }
 
   getSeasons(id: string) {
     return this.http.get(`${this.apiUrl}shows/${id}/seasons`);
+  }
+
+  getEpisodes(id: string) {
+    return this.http.get(`${this.apiUrl}seasons/${id}/episodes`);
+  }
+
+  getEpisodeByNumber(data: IEpisodeQueryParams) {
+    console.log(data);
+    return this.http.get(
+      `${this.apiUrl}shows/${data.showId}/episodebynumber?season=${data.seasonId}&number=${data.episodeNumber}`
+    );
   }
 }

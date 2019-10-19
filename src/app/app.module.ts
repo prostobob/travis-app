@@ -15,6 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MATERIAL_COMPONENTS } from './material.components';
 import { SharedService } from './services/shared.service';
 import { SerializeService } from './services/serialize.service';
+import { SeasonListComponent } from './pages/season-list/season-list.component';
+import createAuth0Client from '@auth0/auth0-spa-js';
+import { EpisodeComponent } from './pages/episode/episode.component';
+import { CallbackComponent } from './components/callback/callback.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { SerializeService } from './services/serialize.service';
     CardItemComponent,
     MainComponent,
     CardProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    SeasonListComponent,
+    EpisodeComponent,
+    CallbackComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

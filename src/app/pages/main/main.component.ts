@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { SerializeService } from 'src/app/services/serialize.service';
 import { Title } from '../../models/title.enum';
 import { ICard } from 'src/app/models/card.interface';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-main',

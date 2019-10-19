@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { IBanner } from '../models/banner.interface';
 import { ICard } from '../models/card.interface';
 import { ISeasonsList } from '../models/seasonsList.interface';
+import { IEpisode } from '../models/episode.interface';
 
 @Injectable()
 export class SerializeService {
-
-  constructor() { }
+  constructor() {}
 
   convertBanner(res): IBanner {
     console.log(res);
@@ -52,8 +52,28 @@ export class SerializeService {
     return res.map(item => {
       return {
         id: item.id,
-        number: item.number
+        number: item.number,
+        premiereDate: item.premiereDate
       };
+    });
+  }
+
+  convertEpisode(res): IEpisode {
+    const episode = {
+      id: res.id,
+      number: res.number,
+      name: res.name,
+      airdate: res.airdate,
+      description: res.summary,
+      imgUrl: res.image.medium,
+      runtime: res.runtime
+    };
+    return episode;
+  }
+
+  convertEpisodeList(res) {
+    return res.map(item => {
+      return this.convertEpisode(item);
     });
   }
 }

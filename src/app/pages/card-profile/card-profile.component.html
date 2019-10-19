@@ -15,8 +15,9 @@
     <h3>Список Сезонов</h3>
     <mat-list role="list" *ngIf="(seasonsList$ | async) as list">
       <mat-list-item role="listitem" *ngFor="let season of list">
-        <a [routerLink]="['/routePath']">
+        <a [routerLink]="['./season', season.number]">
            Cезон номер: {{season.number}}
+           <span>Дата Премьеры: {{season.premiereDate}}</span>
         </a>
       </mat-list-item>
     </mat-list>

@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Episodes List</h3>
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of episodes$ | async">
+      <a [routerLink]="['./episode', item.number]" class="item">
+        <span>Серия - {{item.number}}</span>
+        <div>Название: {{ item.name }}</div>
+      </a>
+    </mat-list-item>
+  </mat-list>
+</div>

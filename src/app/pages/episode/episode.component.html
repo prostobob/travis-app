@@ -1,0 +1,13 @@
+<div class="container" *ngIf="episode$ | async as episode">
+    <div class="image">
+        <img [src]="episode.imgUrl" alt="">
+    </div>
+    <div class="content">
+        <h3>{{episode.name}}</h3>
+        <div [innerHTML]='episode.description'></div>
+    </div>
+    <div class="info">
+        <div>Airdate: {{episode.airdate}}</div>
+        <div>Runtime: {{episode.runtime}}</div>
+    </div>
+</div>
